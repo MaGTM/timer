@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'a_LCDNova';
+    src: url(./font.ttf);
+}
+
 body {
     background-color: #171616;
     display: flex;
