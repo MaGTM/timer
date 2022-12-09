@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #171616;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+svg {
+    width: 500px;
+    height: 500px;
+    transform: rotate(90deg);
+}
+
+svg > circle {
+    fill: transparent;
+    stroke: rgb(202, 2, 2);
+    stroke-width: 5px;
+    stroke-dasharray: 251.32741228718345;
+    transition: stroke-dashoffset 0.3s ease;
+}
+
+.timerBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.timer {
+    background-color: #464646;
+    width: 380px;
+    height: 380px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 0 35px black;
+    z-index: 100;
+}
+
+.timer > input, .timer > span {
+    font-size: 80px;
+    color: rgb(196, 196, 196);
+    font-family: 'a_LCDNova', arial;
+    width: 100px;
+    background-color: transparent;
+    padding: 0 5px;
+}
+
+.timer > span:nth-child(2) {
+    width: auto;
+    padding: 0;
+}
+
+.buttons {
+    display: flex;
+}
+
+button {
+    outline: none;
+    border: none;
+    color: rgb(202, 2, 2);
+    font-size: 40px;
+    padding: 5px 10px;
+    background-color: #464646;;
+    cursor: pointer;
+}
