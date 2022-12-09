@@ -37,7 +37,7 @@ function timer(startBtnSelector, buttonsContainerSelector, circleSelector, minut
 
     let isPaused = false
 
-    let clock = setInterval(() => {
+    let clockHandler = () => {
         if(!isPaused) {
             circle.style.strokeDashoffset -= changingValue
         time -= 1
@@ -48,7 +48,9 @@ function timer(startBtnSelector, buttonsContainerSelector, circleSelector, minut
             return 'Отсчет окончен'
         }
         }
-    }, 1000)
+    }
+    clockHandler()
+    let clock = setInterval(clockHandler, 1000)
 
     let pauseBtn = document.createElement('button'),
         stopBtn = document.createElement('button')
