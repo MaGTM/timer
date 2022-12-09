@@ -15,6 +15,9 @@ function timer(startBtnSelector, buttonsContainerSelector, circleSelector, minut
 
     start.style.display = 'none'
 
+    minutes.setAttribute('readonly', true)
+    seconds.setAttribute('readonly', true)
+
     let timerView = (remainingTime, minutes, seconds) => {
         if(remainingTime > MINUTE) {
             minutes.value = Math.floor(remainingTime / MINUTE)
