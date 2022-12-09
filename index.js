@@ -41,13 +41,13 @@ function timer(startBtnSelector, buttonsContainerSelector, circleSelector, minut
     let isPaused = false
 
     let clockHandler = () => {
-        if(!isPaused) {
+        if(!isPaused && time > 0) {
             circle.style.strokeDashoffset -= changingValue
         time -= 1
         timerView(time, minutes, seconds)
         timerRefactor(minutes, seconds)
         if(!time) {
-            clearInterval(clock)
+            setTimeout(stopHandler, 1000)
             return 'Отсчет окончен'
         }
         }
@@ -86,6 +86,8 @@ function timer(startBtnSelector, buttonsContainerSelector, circleSelector, minut
         stopBtn.remove()
         pauseBtn.removeEventListener('click', pauseHandler)
         stopBtn.removeEventListener('click', stopHandler)
+        minutes.removeAttribute('readonly')
+        seconds.removeAttribute('readonly')
     }
 
     pauseBtn.addEventListener('click', pauseHandler)
